@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Demo socket io</title>
+    <script src="jquery.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <script>
+
+    //connect to Server
+    setInterval(function(){
+        var socket = io("http://localhost:3000");
+    },1000);
+
+    io("http://localhost:3000").on("Data-from-server", function(data){
+      $("#danhsach").empty()
+      for(var i = 0; i<data.recordset.length; i++)
+      {
+        $("#danhsach").append("<tr><td>"+data.recordset[i].MA+"</td><td>"+data.recordset[i].TEN+"</td><td>"+data.recordset[i].GIATRI+"</td><td>"+data.recordset[i].GHICHU+"</td></tr>");
+      }
+    });
+
+    // socket.on("Server-send-data",function(data){
+    //   $("#noidung").append(data);
+    // });
+    //
+    //   $(document).ready(function(){
+    //     $("#mrA").click(function() {
+    //       socket.emit("Client-send-data","hello");
+    //     });
+    //   });
+    </script>
+</head>
+<body>
+  <!-- <div id="mrA">Click send</div>
+  <h2 id="noidung"></h2> -->
+  <table>
+    <tr>
+      <th>MA</th>
+      <th>TEN</th>
+      <th>GIATRI</th>
+      <th>GHICHU</th>
+    </tr>
+    <tbody id="danhsach">
+
+    </tbody>
+  </table>
+</body>
+</html>
