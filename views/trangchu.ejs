@@ -2,15 +2,15 @@
 <head>
     <title>Demo socket io</title>
     <script src="jquery.js"></script>
-    <script src="socket.io/socket.io.js"></script>
+    <script src="https://nameless-plains-96041.herokuapp.com/socket.io/socket.io.js"></script>
     <script>
 
-    //connect to Server
+    //connect to Server send request after 1s
     setInterval(function(){
-        var socket = io("http://localhost:3000");
+        var socket = io("https://nameless-plains-96041.herokuapp.com/");
     },1000);
 
-    io("http://localhost:3000").on("Data-from-server", function(data){
+    io("https://nameless-plains-96041.herokuapp.com/").on("Data-from-server", function(data){
       $("#danhsach").empty()
       for(var i = 0; i<data.recordset.length; i++)
       {
