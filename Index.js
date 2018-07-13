@@ -34,10 +34,10 @@ app.get("/", function(req, res){
 
 //config connect to database
 var dbConfig = {
-  server: "192.168.1.200",
-  database: "cafe",
+  server: "thanhthoiserver.ddns.net",
+  database: "thanhthoi",
   user:"sa",
-  password:"kingpro@20181",
+  password:"kingpro123",
   port:1433
 };
 
@@ -51,7 +51,7 @@ function getEmp()
       console.log("err");
       return;
     }
-    req.query("SELECT TOP 5 * FROM cauhinh", function(err, recordset){
+    req.query("SELECT TOP 5 * FROM BANGGIA", function(err, recordset){
       if(err)
       {
         console.log("err db");

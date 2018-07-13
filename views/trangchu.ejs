@@ -14,7 +14,7 @@
       $("#danhsach").empty()
       for(var i = 0; i<data.recordset.length; i++)
       {
-        $("#danhsach").append("<tr><td>"+data.recordset[i].MA+"</td><td>"+data.recordset[i].TEN+"</td><td>"+data.recordset[i].GIATRI+"</td><td>"+data.recordset[i].GHICHU+"</td></tr>");
+        $("#danhsach").append("<tr><td>"+data.recordset[i].MABANGGIA+"</td><td>"+data.recordset[i].TENBANGGIA+"</td><td>"+data.recordset[i].GHICHU+"</td><td>"+data.recordset[i].SUDUNG+"</td></tr>");
       }
     });
 
@@ -34,10 +34,10 @@
   <h2 id="noidung"></h2> -->
   <table>
     <tr>
-      <th>MA</th>
-      <th>TEN</th>
-      <th>GIATRI</th>
+      <th>MABANGGIA</th>
+      <th>TENBANGGIA</th>
       <th>GHICHU</th>
+      <th>SUDUNG</th>
     </tr>
     <tbody id="danhsach">
 
